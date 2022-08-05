@@ -1,5 +1,6 @@
 # Near_Guide
 
+<img width="449" alt="Знімок екрана 2022-08-05 о 17 18 43" src="https://user-images.githubusercontent.com/102728347/183096536-8b6ac0dd-a1fa-4993-bf1a-c04cb386aa4d.png">
 
 * [Встановлення node](https://github.com/MaxMavaIll/near_guide/blob/main/README.md#%D0%B2%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F-node)
 * [Створення гаманця](https://github.com/MaxMavaIll/near_guide/blob/main/README.md#c%D1%82%D0%B2%D0%BE%D1%80%D0%B5%D0%BD%D0%BD%D1%8F-%D0%B3%D0%B0%D0%BC%D0%BD%D1%86%D1%8F)
@@ -262,3 +263,5 @@ near call factory.shardnet.near create_staking_pool '{"staking_pool_id": "$MONIK
 ```
 near call andfat deposit_and_stake --amount <amount> --accountId $ACCOUNT_ID --gas=300000000000000 
 ```
+
+
