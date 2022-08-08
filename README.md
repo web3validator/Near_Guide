@@ -263,5 +263,5 @@ near call factory.shardnet.near create_staking_pool '{"staking_pool_id": "$MONIK
 ```
 near call andfat deposit_and_stake --amount <amount> --accountId $ACCOUNT_ID --gas=300000000000000 
 ```
-
+Якщо вам потрібно інші комади перейдіть по цій силці [commands](https://github.com/cybernekit/Near_Guide/blob/main/commands.md)
 
