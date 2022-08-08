@@ -92,12 +92,16 @@ source ~/.cargo/env
 
 
 Встановлюємо репозиторій
+Обовязково тут провіряємо актуальну версію aktualʹna versiya
+16 / 5 000
+Результати перекладу
+[current version](https://github.com/near/stakewars-iii/blob/main/commit.md)
 ```
 git clone https://github.com/near/nearcore
 cd nearcore
 git fetch
 #Обов'язково провіряємо чи це нова версія
-git checkout c1b047b8187accbf6bd16539feb7bb60185bdc38
+git checkout 68bfa84ed1455f891032434d37ccad696e91e4f5
 
 ```
 
@@ -118,15 +122,6 @@ cargo build -p neard --release --features shardnet
 ```
 rm ~/.near/config.json
 wget -O ~/.near/config.json https://s3-us-west-1.amazonaws.com/build.nearprotocol.com/nearcore-deploy/shardnet/config.json
-
-```
-
-Завантажуємо снепшот
-```
-sudo apt-get install awscli -y
-cd ~/.near
-aws s3 --no-sign-request cp s3://build.openshards.io/stakewars/shardnet_noarchive/data.tar.gz .
-tar -xzvf data.tar.gz
 
 ```
 
