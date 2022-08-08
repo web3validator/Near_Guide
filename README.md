@@ -261,14 +261,14 @@ near call factory.shardnet.near create_staking_pool '{"staking_pool_id": "$MONIK
 
 Також потрібно  закинути відповідну суму для того, щоб валідатор був у валідному сеті
 ```
-near call andfat deposit_and_stake --amount <amount> --accountId $ACCOUNT_ID --gas=300000000000000 
+near call $MONIKER deposit_and_stake --amount <amount> --accountId $ACCOUNT_ID --gas=300000000000000 
 ```
 Якщо вам потрібно інші комади перейдіть по цій силці [commands](https://github.com/cybernekit/Near_Guide/blob/main/commands.md)
 
-# Створюємо пінг
+# Створюємо пінг(це також важлива частина для створення валідатора)
 Встановлюємо такий скрипт
 ```
-wget -P ~/ https://raw.githubusercontent.com/MaxMavaIll/near_guide/main/ping.sh && chmod +x ~/ping.sh 
+wget -P ~/  && chmod +x ~/ping.sh 
 mkdir -p $HOME/logs
 ```
 Втановлюємо crontab якщо він у вас не встановлений і відкриваємо редактор де будемо задавати зміни
