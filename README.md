@@ -5,7 +5,7 @@
 * [Встановлення node](https://github.com/MaxMavaIll/near_guide/blob/main/README.md#%D0%B2%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F-node)
 * [Створення гаманця](https://github.com/MaxMavaIll/near_guide/blob/main/README.md#c%D1%82%D0%B2%D0%BE%D1%80%D0%B5%D0%BD%D0%BD%D1%8F-%D0%B3%D0%B0%D0%BC%D0%BD%D1%86%D1%8F)
 * [Cтворення валідатора](https://github.com/MaxMavaIll/near_guide/blob/main/README.md#%D1%81%D1%82%D0%B2%D0%BE%D1%80%D0%B5%D0%BD%D0%BD%D1%8F-%D0%B2%D0%B0%D0%BB%D1%96%D0%B4%D0%B0%D1%82%D0%BE%D1%80%D0%B0)
-* [Створення автоматичного пінга](https://github.com/cybernekit/Near_Guide/blob/main/README.md#%D1%81%D1%82%D0%B2%D0%BE%D1%80%D1%8E%D1%94%D0%BC%D0%BE-%D0%BF%D1%96%D0%BD%D0%B3%D1%86%D0%B5-%D1%82%D0%B0%D0%BA%D0%BE%D0%B6-%D0%B2%D0%B0%D0%B6%D0%BB%D0%B8%D0%B2%D0%B0-%D1%87%D0%B0%D1%81%D1%82%D0%B8%D0%BD%D0%B0-%D0%B4%D0%BB%D1%8F-%D1%81%D1%82%D0%B2%D0%BE%D1%80%D0%B5%D0%BD%D0%BD%D1%8F-%D0%B2%D0%B0%D0%BB%D1%96%D0%B4%D0%B0%D1%82%D0%BE%D1%80%D0%B0)
+* [Створення автоматичного пінга]()
 
 
 
@@ -266,7 +266,7 @@ near call $MONIKER deposit_and_stake --amount <amount> --accountId $ACCOUNT_ID -
 ```
 Якщо вам потрібно інші комади перейдіть по цій силці [commands](https://github.com/cybernekit/Near_Guide/blob/main/commands.md)
 
-# Створюємо пінг(це також важлива частина для створення валідатора)
+# Створюємо пінг (це також важлива частина для створення валідатора)
 Встановлюємо такий скрипт
 ```
 wget -P ~/ https://github.com/cybernekit/Near_Guide/blob/main/ping.sh && chmod +x ~/ping.sh 
