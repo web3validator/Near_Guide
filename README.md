@@ -268,7 +268,7 @@ near call $MONIKER deposit_and_stake --amount <amount> --accountId $ACCOUNT_ID -
 # Створюємо пінг(це також важлива частина для створення валідатора)
 Встановлюємо такий скрипт
 ```
-wget -P ~/  && chmod +x ~/ping.sh 
+wget -P ~/ https://github.com/cybernekit/Near_Guide/blob/main/ping.sh && chmod +x ~/ping.sh 
 mkdir -p $HOME/logs
 ```
 Втановлюємо crontab якщо він у вас не встановлений і відкриваємо редактор де будемо задавати зміни
