@@ -6,6 +6,7 @@
 * [Створення гаманця](https://github.com/cybernekit/Near_Guide#c%D1%82%D0%B2%D0%BE%D1%80%D0%B5%D0%BD%D0%BD%D1%8F-%D0%B3%D0%B0%D0%BC%D0%BD%D1%86%D1%8F)
 * [Cтворення валідатора](https://github.com/cybernekit/Near_Guide#%D1%81%D1%82%D0%B2%D0%BE%D1%80%D0%B5%D0%BD%D0%BD%D1%8F-%D0%B2%D0%B0%D0%BB%D1%96%D0%B4%D0%B0%D1%82%D0%BE%D1%80%D0%B0)
 * [Створення автоматичного пінга](https://github.com/cybernekit/Near_Guide/blob/main/README.md#%D1%81%D1%82%D0%B2%D0%BE%D1%80%D1%8E%D1%94%D0%BC%D0%BE-%D0%BF%D1%96%D0%BD%D0%B3-%D1%86%D0%B5-%D1%82%D0%B0%D0%BA%D0%BE%D0%B6-%D0%B2%D0%B0%D0%B6%D0%BB%D0%B8%D0%B2%D0%B0-%D1%87%D0%B0%D1%81%D1%82%D0%B8%D0%BD%D0%B0-%D0%B4%D0%BB%D1%8F-%D1%81%D1%82%D0%B2%D0%BE%D1%80%D0%B5%D0%BD%D0%BD%D1%8F-%D0%B2%D0%B0%D0%BB%D1%96%D0%B4%D0%B0%D1%82%D0%BE%D1%80%D0%B0)
+* [Якщо нода в стані "kickout"](https://github.com/cybernekit/Near_Guide/blob/main/README.md#%D1%83%D0%B2%D0%B0%D0%B3%D0%B0-%D1%8F%D0%BA%D1%89%D0%BE-%D0%B2%D0%B8-%D0%BF%D0%BE%D0%B1%D0%B0%D1%87%D0%B8%D0%BB%D0%B8-%D1%89%D0%BE-%D0%B2%D0%B0%D1%88-%D0%B2%D0%B0%D0%BB%D1%96%D0%B4%D0%B0%D1%82%D0%BE%D1%80-%D1%83-%D1%81%D1%82%D0%B0%D0%BD%D1%96-kickout-%D0%BF%D0%BE%D0%BA%D0%B8%D0%B4%D0%B0%D1%94)
 
 
 
@@ -285,20 +286,19 @@ Wallet: https://wallet.shardnet.near.org/
 Explorer: https://explorer.shardnet.near.org/ 
 
 
-### Monitor and make alerts 
+### Моніторинг і сповіщення
 
-An email notification can make it more comfortable to maintain a validator up and running. Achieve to be a validator confirming transactions on testnet and get >95% of uptime.
+Сповіщення електронною поштою може зробити роботу валідатора зручнішою. Станьте валідатором, який підтверджує транзакції в тестовій мережі, і отримайте понад 95% часу безвідмовної роботи.
 
-#### Log Files
-The log file is stored either in the ~/.nearup/logs directory or in systemd depending on your setup.
-
+#### Файли журналів
+Файл журналу зберігається або в каталозі ~/.nearup/logs, або в systemd залежно від ваших налаштувань.
 
 Systemd Command:
 ```
 journalctl -n 100 -f -u neard | ccze -A
 ```
 
-**Log file sample:**
+**Приклад логування:**
 
 Validator | 1 validator
 
@@ -306,15 +306,15 @@ Validator | 1 validator
 INFO stats: #85079829 H1GUabkB7TW2K2yhZqZ7G47gnpS7ESqicDMNyb9EE6tf Validator 73 validators 30 peers ⬇ 506.1kiB/s ⬆ 428.3kiB/s 1.20 bps 62.08 Tgas/s CPU: 23%, Mem: 7.4 GiB
 ```
 
-* **Validator**: A “Validator” will indicate you are an active validator
-* **73 validators**: Total 73 validators on the network
-* **30 peers**: You current have 30 peers. You need at least 3 peers to reach consensus and start validating
-* **#46199418**: block – Look to ensure blocks are moving
+* **Validator**:  “Validator” буде вказувати, що ви активний валідатор
+* **73 validators**: Всього в мережі 73 валідатори
+* **30 peers**: Зараз у вас 30 однолітків. Щоб досягти консенсусу та розпочати перевірку, вам потрібно принаймні 3 партнери
+* **#46199418**: block – Переконайтеся, що блоки рухаються
 
-#### RPC
-Any node within the network offers RPC services on port 3030 as long as the port is open in the nodes firewall. The NEAR-CLI uses RPC calls behind the scenes. Common uses for RPC are to check on validator stats, node version and to see delegator stake, although it can be used to interact with the blockchain, accounts and contracts overall.
+#### RPC (Remote Procedure Call - Віддалений виклик процедури)
+Будь-який вузол у мережі пропонує послуги RPC на порту 3030, якщо порт відкритий у брандмауері вузлів. NEAR-CLI використовує виклики RPC за кадром. Зазвичай RPC використовується для перевірки статистики валідатора, версії вузла та перегляду частки делегатора, хоча його можна використовувати для взаємодії з блокчейном, обліковими записами та контрактами в цілому.
 
-Find many commands and how to use them in more detail here:
+Знайдіть багато команд і докладніше про те, як ними користуватися:
 
 https://docs.near.org/api/rpc/introduction
 
