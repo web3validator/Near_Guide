@@ -1,4 +1,4 @@
-# Near_Guide
+# Інструкція по встановлення ноди Near у шарднеті Stake Wars
 
 <img width="449" alt="Знімок екрана 2022-08-05 о 17 18 43" src="https://user-images.githubusercontent.com/102728347/183096536-8b6ac0dd-a1fa-4993-bf1a-c04cb386aa4d.png">
 
