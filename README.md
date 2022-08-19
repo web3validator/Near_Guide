@@ -278,3 +278,71 @@ crontab -e
 ```
 0 */2 * * * bash /root/ping.sh
 ```
+## Usefull links
+
+Wallet: https://wallet.shardnet.near.org/
+
+Explorer: https://explorer.shardnet.near.org/ 
+
+
+### Monitor and make alerts 
+
+An email notification can make it more comfortable to maintain a validator up and running. Achieve to be a validator confirming transactions on testnet and get >95% of uptime.
+
+#### Log Files
+The log file is stored either in the ~/.nearup/logs directory or in systemd depending on your setup.
+
+
+Systemd Command:
+```
+journalctl -n 100 -f -u neard | ccze -A
+```
+
+**Log file sample:**
+
+Validator | 1 validator
+
+```
+INFO stats: #85079829 H1GUabkB7TW2K2yhZqZ7G47gnpS7ESqicDMNyb9EE6tf Validator 73 validators 30 peers ⬇ 506.1kiB/s ⬆ 428.3kiB/s 1.20 bps 62.08 Tgas/s CPU: 23%, Mem: 7.4 GiB
+```
+
+* **Validator**: A “Validator” will indicate you are an active validator
+* **73 validators**: Total 73 validators on the network
+* **30 peers**: You current have 30 peers. You need at least 3 peers to reach consensus and start validating
+* **#46199418**: block – Look to ensure blocks are moving
+
+#### RPC
+Any node within the network offers RPC services on port 3030 as long as the port is open in the nodes firewall. The NEAR-CLI uses RPC calls behind the scenes. Common uses for RPC are to check on validator stats, node version and to see delegator stake, although it can be used to interact with the blockchain, accounts and contracts overall.
+
+Find many commands and how to use them in more detail here:
+
+https://docs.near.org/api/rpc/introduction
+
+
+# Увага, якщо ви побачили що ваш валідатор у стані "KICKOUT" (покидає)
+
+команда:
+```
+sudo apt install curl jq
+```
+##### Команди які будуть необхідними у цьому випадку:
+###### Перевірити версію ноди:
+команда:
+```
+curl -s http://127.0.0.1:3030/status | jq .version
+```
+###### Перевірити делегаторів та ващ стейк:
+команда:
+```
+near view <your pool>.factory.shardnet.near get_accounts '{"from_index": 0, "limit": 10}' --accountId <accountId>.shardnet.near
+```
+###### Перевірити причину покиданная валідторського сету
+команда:
+```
+curl -s -d '{"jsonrpc": "2.0", "method": "validators", "id": "dontcare", "params": [null]}' -H 'Content-Type: application/json' 127.0.0.1:3030 | jq -c '.result.prev_epoch_kickout[] | select(.account_id | contains ("<POOL_ID>"))' | jq .reason
+```
+###### Перевірити кількість Вироблено/Очікуваних блоків
+команда:
+```
+curl -r -s -d '{"jsonrpc": "2.0", "method": "validators", "id": "dontcare", "params": [null]}' -H 'Content-Type: application/json' 127.0.0.1:3030 | jq -c '.result.current_validators[] | select(.account_id | contains ("POOL_ID"))'
+```
